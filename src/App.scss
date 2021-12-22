@@ -1,0 +1,49 @@
+@import "./scss/variable";
+@import "./scss/mixin";
+@import "./scss/reset";
+@import "./scss/icons";
+@import "./scss/base";
+@import "./scss/utilities";
+
+// COMPONENT
+@import "./scss/components/form";
+@import "./scss/components/btn";
+@import "./scss/components/modal";
+@import "./scss/components/table";
+
+@import "./scss/components/dashboard-main";
+
+@import "./components/spinner/spinner";
+@import "./components/table-nodata/table-nodata";
+@import "./components/pagination/dashboard-pagination";
+@import "./components/toggle/toggle";
+@import "./components/backtotop/backtotop";
+@import "./components/footer/admin/footer";
+
+
+
+// PAGES
+@import "./scss/pages/reg-base"; //frontend -> header, footer, banner, call to action
+@import "./components/pages/404/404";
+
+// DASHBOARD
+@import "./components/pages/regular/reg-login/reg-login";
+@import "./components/pages/regular/reg-donation/reg-gen-donation";
+@import "./components/pages/regular/reg-signup/reg-signup";
+@import "./components/pages/regular/reg-messages/reg-messages";
+
+@import "./components/pages/regular/reg-dashboard/dashboard-overview";
+@import "./components/pages/regular/reg-dashboard/dashboard-myprofile";
+// @import "./scss/components/dashboard-overview";
+
+@import "./components/header/backend/dashboard-header";
+@import "./components/sidebar/backend/regular/dashboard-sidebar";
+
+@import "./components/pages/regular/reg-checkout/checkout-children";
+@import "./components/pages/regular/reg-childrenlist/children";
+@import "./components/pages/regular/reg-checkout/guest-form";
+@import "./components/pages/regular/reg-childrenlist/modal/childrenlist-modal";
+
+// Admin
+@import "./components/pages/admin/adm-login/adm-login";
+@import "./components/pages/admin/adm-modal/children/adm-modal-children";

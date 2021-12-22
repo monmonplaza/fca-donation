@@ -1,0 +1,67 @@
+.switch {
+    position:absolute;
+    top: -2rem;
+    left: 1rem;
+   
+    input {
+     display: none;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 10px;
+        background-color: lighten($blue, 20);
+        width: 2.5rem;
+        height: 1.5rem;
+        border-radius: 1rem;
+        z-index: 7;
+        display: block;
+        transition: .5s ease;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $light;
+            border-radius: 50%;
+            height: 1.3rem;
+            width: 1.3rem;
+            transition: .5s ease;
+            display: block;
+            border: 1px solid lighten($blue, 20);
+        }
+
+       
+    }
+    .mode {
+        display: block;
+        position: absolute;
+        right: -11rem;
+        top: 0.1rem;
+        opacity: 1;
+        transition: .5s ease;
+        white-space: nowrap;
+        font-size: 1.2rem;
+        color: $dark;
+        text-transform: uppercase;
+    }
+
+    input:checked + .slider {
+        background-color: $red-1;
+        
+    }
+
+    input:checked + .slider::after {
+        left: calc(100% - 1.5rem);
+        border: 1px solid lighten($red-1, 20);
+    }
+
+    input:checked + .slider + .mode {
+        opacity: 1;
+        
+       
+    }
+
+}

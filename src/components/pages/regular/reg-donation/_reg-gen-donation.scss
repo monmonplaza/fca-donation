@@ -1,0 +1,38 @@
+.general__donation {
+    position: relative;
+    &__wrapper {
+        max-width: 50rem;
+        padding: 4rem 2rem;
+        margin: 10rem auto;
+        border: 1px solid $gray-1;
+    }
+    &__intro {
+        margin-bottom: 2rem ;
+    }
+
+    form {
+        margin-bottom: 5rem;
+        .donation--amount {
+            position: relative;
+            &::after {
+                content: '$';
+                left: 1.3rem;
+                top: 3rem;
+                position: absolute;
+                z-index: 999;
+                
+                display: block;
+            }
+            input {
+                padding-left: 3rem;
+            }
+        }
+    }
+
+    &__content {
+        margin-bottom: 2rem;
+        h3, h4 {
+            margin-bottom: .5rem;
+        }
+    }
+}

@@ -1,0 +1,244 @@
+.dashboard {
+    &__tab__action {
+        position: absolute;
+        right: 0;
+        top: 1rem;
+        @include media-query($break-sm) {
+            top: -3rem;
+        }
+        button {
+            background-color: transparent;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            &:hover {
+                color: $blue;
+            }
+
+        }
+    }
+
+    &__tab__block {
+        
+        @include media-query($break-sm) {
+            position: relative;
+            flex-grow: 1;
+            width: 100%;
+            }
+        
+    }
+
+    &__tab__content {
+        display: none;
+        order: 99;
+        position: relative;
+     
+    }
+
+
+
+    &__tab__wrapper {
+        display: flex;
+        margin-top: 4rem;
+        flex-wrap: wrap;
+        position: relative;
+        justify-content: flex-start;
+        border-bottom: 1px solid $blue;
+        @include media-query($break-sm) {
+            flex-direction: column;
+     
+        }
+    
+        input[type=radio] {
+            display: none;
+        }
+
+        input[type=radio] + label {
+            display: block;
+        }  
+
+        input[type=radio]:checked + label + .dashboard__tab__content {
+            display: block!important;
+            order: 999;
+        }
+
+        input[type=radio]:checked + label {
+            background-color: $light;
+            background-color: darken($blue, 10);
+            color: $light;
+            
+        }
+
+        .tab__label {
+            display: block;
+            padding:  1rem;
+            margin-right: .5rem;
+            cursor: pointer;
+            color: $blue;
+            background-color: $blue-light;
+            @include media-query($break-sm) {
+                margin-right: 0;
+                padding:  .8rem;
+                order: 0;
+            }
+        }
+
+        .table__responsive {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            overflow-x: auto ;
+       
+            @include custom_scrollbar;
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 3rem;
+                thead {
+                    background-color: $blue-dark;
+                    color: $light;
+                    tr{
+
+                        td {
+                            padding: 1.2rem .5rem;
+                            white-space: nowrap;
+                            padding-left: 1rem;
+                            @include media-query($break-sm) {
+                               width: 20rem;
+                            }
+                        }
+                        td:first-child {
+                            width: 20rem;
+                            padding-right: 3rem;
+                            
+                            }
+                        td:last-child {
+                            width: 6rem;
+                            
+                            }
+                    }
+                }
+
+                tbody tr {
+                    padding: .5rem;
+                    @include transition;
+                    &:hover {
+                        background-color: #f7f7f7;
+                    }
+
+                    td {
+                        padding: 1.2rem .5rem;
+                        border-bottom: 1px solid $light-1;
+                        white-space: nowrap;
+                    }
+
+                    td:first-child {
+                        width: 20rem;
+                        padding-right: 3rem;
+                        }
+
+                 
+                }
+                tbody tr:nth-child(even) {
+                    background-color: $light-1;
+                }
+
+                tbody tr:last-child {
+                    .table__option {
+                        &__list {
+                            top: -85%;
+                            right: 90%;
+                            left: unset;
+
+                        }
+                    }
+                }
+
+                tbody tr {
+                    padding: .5rem;
+                    .table__option {
+                        position: relative;
+                        &__icon {
+                            padding: .5rem;
+                            border: 1px solid transparent;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 3rem;
+                            height: 3rem;
+                            
+                            &:hover {
+                                border: 1px solid $light-2;
+                                border-radius: .2rem;
+                                cursor: pointer;
+                            }
+
+                            svg {
+                                font-size: 2rem;
+                            }
+                        }
+
+                        &__icon:hover .table__option__list {
+                            border: 1px solid $light-2;
+                            border-radius: .2rem;
+                            color: $blue;
+                            display: block;
+                        }
+                        &__list {
+                            position: absolute;
+                            min-width: 12rem;
+                            background-color:$light;
+                            border: 1px solid $light-1!important;
+                            top: 78%;
+                            right: calc(50% - .5rem);
+                            box-shadow: 2px 2px 8px rgba(0,0,0,0.01);
+                            display: none;
+                            z-index: 999999;
+                            @include media-query($break-sm){
+                                left: -170%;
+                            }
+                            ul {
+                               li {
+                                   
+                                   text-align: center;
+                                   button {
+                                       color:$blue-dark;
+                                       font-size: 1.4rem;
+                                       background-color: transparent;
+                                       border: none;
+                                       cursor: pointer;
+                                       width: 100%;
+                                       padding: .6rem 1rem;
+                                       &:hover {
+                                           background-color: $blue-light;
+                                       }
+                                   }
+                               } 
+
+                               li:last-child{
+                                   margin-bottom:0 ;
+                               }
+                            }
+
+                        }
+                    }
+                    .table__status {
+                        span {
+                            padding: .6rem 1rem;
+                            color: $light;
+                            border-radius: .5rem;
+                            font-size: 1.4rem;
+                        }
+
+                        .status--active{
+                            background-color: $green;
+                        }
+                        .status--inactive{
+                            background-color: $gray-1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

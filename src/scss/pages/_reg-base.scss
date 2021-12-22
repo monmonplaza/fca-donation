@@ -1,0 +1,267 @@
+/*************************************************  
+This is use to style the banner footer and header
+of the regular user donation and signup pages
+**************************************************/
+
+// FRONTEND HEADER - REGULAR USER
+
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: $light;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+.header__top {
+  background-color: $blue;
+  padding: 0.5rem;
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    li {
+      margin-left: 2rem;
+      a {
+        font-size: 1.3rem;
+        color: $light;
+        @include transition;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.header__main.open {
+  nav {
+    right: 0;
+  }
+
+  .toggle__mobile {
+    .bar {
+      background-color: transparent;
+      &::before {
+        transform: rotate(45deg) translate(-4px, -6px);
+        background-color: $blue !important;
+        transform-origin: center center;
+      }
+      &::after {
+        transform: rotate(-45deg) translate(-4px, 6px);
+        background-color: $blue !important;
+      }
+    }
+  }
+}
+
+.header__main {
+  &__wrap {
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem 0;
+    position: relative;
+
+    .branding {
+      img {
+        width: 30rem;
+        @include media-query($break-md) {
+          width: 27rem;
+        }
+      }
+    }
+    nav {
+      justify-self: flex-end;
+      align-self: center;
+      ul {
+        display: flex;
+        li {
+          margin-left: 2rem;
+          align-self: center;
+          @include media-query($break-sm) {
+            margin-left: 0rem;
+          }
+          a {
+            color: $dark;
+            @include transition;
+            &:hover {
+              color: $blue;
+            }
+          }
+
+          a.btn__header {
+            text-align: center;
+            padding: 1rem 1.4rem;
+            text-decoration: none;
+            transition: 0.5s ease;
+            color: $light;
+            transition: 0.5s ease;
+            display: inline-block;
+            font-size: 1.4rem;
+            border-radius: 0.5rem;
+            @include media-query($break-sm) {
+              padding: 1rem 13rem;
+            }
+          }
+        }
+      }
+
+      @include media-query($break-md) {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        background-color: $light;
+        min-height: calc(100vh - 5rem);
+        padding: 5rem 0 3rem;
+        right: -110%;
+        transition: 0.5s ease;
+        ul {
+          flex-direction: column;
+          align-items: center;
+          li {
+            margin-bottom: 4rem;
+            a {
+              font-size: 2rem;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+
+    .toggle__mobile {
+      position: absolute;
+      z-index: 999;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: none;
+      cursor: pointer;
+      width: 3rem;
+
+      @include media-query($break-md) {
+        display: block;
+      }
+      .bar {
+        width: 3rem;
+        height: 4px;
+        background-color: $blue;
+        display: block;
+        transition: 0.5s ease;
+
+        &::after {
+          content: "";
+          position: absolute;
+          @extend .bar;
+          top: -0.8rem;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          @extend .bar;
+          top: 0.7rem;
+        }
+      }
+    }
+  }
+}
+
+// PAGE BANNER
+.banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 20rem;
+  color: $light;
+  margin-bottom: 10rem;
+  background: {
+    image: linear-gradient(45deg, rgb(22, 70, 32) 35%, rgba(36, 131, 36, 0.6)),
+      url("../../css-images/banner-childrenList.jpg");
+    size: cover;
+    repeat: no-repeat;
+    position: right 7rem;
+  }
+  h1 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 3rem;
+    @include media-query($break-sm) {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+// CALL TO ACTION
+
+.call__to__action {
+  color: $light;
+  background: {
+    image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+      url("../../css-images/call-to-action.jpg");
+    size: cover;
+    repeat: no-repeat;
+    position: right center;
+  }
+  &__wrapper {
+    min-height: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    h2 {
+      font-size: clamp(4rem, 5vw, 7rem);
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+// FOOTER
+
+.footer {
+  margin-top: auto;
+  background-color: $blue;
+  &__wrapper {
+    text-align: center;
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+    color: $light;
+    img {
+      //   width: 34rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+      li {
+        margin: 0 1rem;
+        a {
+          color: $light;
+          @include transition;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.copyright {
+  text-align: center;
+  color: $light;
+  background-color: darken($blue, 15);
+  padding: 0.5rem 0;
+  p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    a {
+      color: $light;
+    }
+  }
+}

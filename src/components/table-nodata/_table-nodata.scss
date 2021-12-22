@@ -1,0 +1,13 @@
+.table__nodata {    
+    &__wrapper {
+        text-align: center;
+        padding: 3rem 0;
+        svg {
+            font-size: 9rem;
+            margin-bottom: 2rem;
+        }
+        h3 {
+            opacity: .6;
+        }
+    }
+}

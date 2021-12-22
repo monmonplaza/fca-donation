@@ -1,0 +1,76 @@
+.form__group {
+    margin-bottom: 1rem;
+    position: relative;
+    label {
+        display: block;
+        margin-bottom: .5rem;
+        font-weight: 600;
+    }
+
+    input, textarea, select {
+        padding: .8rem 1.4rem;
+        border-radius: .5rem;
+        border: 1px solid $gray;
+        outline: none;
+        &:focus {
+            border-color: $blue;
+        }
+    }
+
+    textarea.modal--textarea {
+        width: 100%;
+        height: 20rem;
+        overflow: auto;
+        @include custom_scrollbar;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    input[type=date] {
+        padding: .6rem 1.4rem;
+    }
+    .form__msg {
+        position: absolute;
+        top: 0rem;
+        right: 0;
+        font-size: 1.4rem;
+        color: $red;
+    }
+
+   
+}
+
+.form__group.full--width {
+    input, textarea, select, button {
+        width: 100%;
+    }
+}
+
+.form__msgbox {
+    margin: 1rem 0;
+    padding: .8rem;
+    border: 1px solid;
+    border-radius: .5rem;
+    text-align: center;
+}
+
+.form__msgbox.msg--success {
+    background-color: lighten($green, 40);
+    border-color: $green;
+    color: $green;
+}
+
+.form__msgbox.msg--error {
+    background-color: lighten($red, 30);
+    border-color: lighten($red, 70);
+    color: $light;
+}
+
+// ERROR ON INPUT
+
+    input.input--error, textarea.input--error, select.input--error {
+        border-color: $red;
+        background-color: lighten($red, 40);
+    }

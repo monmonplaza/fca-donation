@@ -1,0 +1,101 @@
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  margin: 8px;
+  border: 4px solid $blue;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: $blue transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner.spinner--block {
+  text-align: center;
+}
+
+
+.spinner.spinner--button {
+  display: inline;
+  .lds-ring {
+    width: 18px;
+    height: 20px;
+    margin-top: -0.7rem;
+  }
+  .lds-ring div {
+    width: 15px;
+    height: 15px;
+    border: 2px solid $light;
+    border-color: $light transparent transparent transparent;
+  }
+}
+
+.spinner.spinner--window {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+// NEED PARENT TO BE RELATIVE POSITION
+.spinner.spinner--block {
+  @extend .spinner.spinner--window;
+  position: absolute;
+  height: 40rem;
+}
+
+
+// CARD SPINNER
+
+.spinner__card {
+  min-height: 407px;
+  width: 100%;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+// TABLE SPINNER 
+.spinner.spinner--table {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 90%;
+  z-index:9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($light, .5);
+}

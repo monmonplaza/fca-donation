@@ -1,0 +1,28 @@
+.backtotop {
+    // opacity: 0;
+    display: none;
+    z-index: 99999;
+    position: fixed;
+    right: 5rem;
+    bottom: 5rem;
+    transition: .5s ease;
+    a {
+        padding: 1.5rem 1rem .5rem 1rem;
+        line-height: 0;
+        border-radius: .5rem;
+        background-color:rgba($blue-dark, .9) ;
+        &:hover {
+            background-color: $blue-darker;
+        }
+        svg {
+            fill: $light;
+            font-size: 2rem;
+            line-height: 0;
+        }
+    }
+}
+
+.backtotop.show {
+    // opacity: 1;
+    display: block;
+}

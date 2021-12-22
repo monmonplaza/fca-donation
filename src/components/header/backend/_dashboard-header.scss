@@ -1,0 +1,91 @@
+.dashboard__header {
+    background-color: $blue;
+    padding: 1rem 0;
+    position: relative;
+   
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+    }
+
+    .branding .img{
+        width: 33rem;
+        @include media-query($break-sm) {
+            width: 22rem;
+        }
+    }
+    .dashboard__nav {
+        align-self: center;
+        display: flex;
+        li {
+            margin-left: 3rem;
+        }
+        button {
+            display: flex;
+            color: $light;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            
+            @include transition;
+            &:hover {
+                color: $light-2;
+            }
+            svg {
+                margin-right: .5rem;
+                font-size: 3rem;
+            }
+            
+        }
+    }
+}
+
+.dashboard__mobile {
+    position: fixed;
+    height:0;
+    transition: .6s ease;
+    background-color: $blue;
+    z-index: 999;
+    width: 100%;
+    overflow: hidden;
+    &__wrap {
+        padding: 5rem 1rem;
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 2rem;
+            li {
+                text-align: center;
+                 width: 100%;   
+                 height: 8rem;
+                 
+                a, button {
+                    color: $light;
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 1.2rem;
+                    
+                    &:hover {
+                        color: #84ddff;
+                    }
+                }
+
+                button {
+                    margin: 0 auto;
+                    
+                }
+                svg {
+                    font-size: 3rem;
+                    margin: 0 auto .7rem;
+                }
+            }
+        }
+    }
+}
+
+
+.dashboard__mobile.show {
+    height:100vh;
+    z-index: 99999999;
+}

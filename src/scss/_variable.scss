@@ -1,0 +1,33 @@
+// $blue: hsl(202, 61%, 53%);
+// $blue-1: hsl(202, 61%, 40%);
+$blue: hsl(123, 36%, 50%);
+$blue-1: hsl(123, 36%, 60%);
+$blue-dark: darken($blue, 10);
+$blue-darker: darken($blue, 20);
+$blue-light: lighten($blue, 40);
+
+$orange: hsl(32, 97%, 57%);
+$orange-1: hsl(32, 97%, 50%);
+
+$green: hsl(123, 36%, 50%);
+$green-1: hsl(123, 36%, 60%);
+
+$dark: hsl(0, 0%, 20%);
+$dark-1: hsl(0, 0%, 30%);
+
+$red: hsl(0, 83%, 50%);
+$red-1: hsl(0, 83%, 65%);
+
+$warning: hsl(54, 74%, 57%);
+$warning-1: hsl(54, 56%, 69%);
+
+$gray: hsl(0, 0%, 40%);
+$gray-1: hsl(0, 0%, 70%);
+$gray-2: hsl(0, 0%, 90%);
+
+$light: hsl(0, 0%, 100%);
+$light-1: hsl(0, 0%, 95%);
+$light-2: hsl(0, 0%, 80%);
+
+$break-md: 1100px;
+$break-sm: 620px;

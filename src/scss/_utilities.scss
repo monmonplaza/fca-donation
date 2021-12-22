@@ -1,0 +1,37 @@
+.grid {
+    display: grid;
+    
+}
+
+.col-2 {
+    grid-template-columns: 1fr 1fr;
+    @include media-query($break-sm) {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.col-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+    @include media-query($break-sm) {
+        grid-template-columns: 1fr;
+    }
+}
+.text--center {
+    text-align: center;
+}
+
+
+.sm__only {
+    display: none;
+    @include media-query($break-sm) {
+        display: block;
+    }
+}
+
+
+.lg__only {
+    @include media-query($break-sm) {
+        display: none;
+    }
+}

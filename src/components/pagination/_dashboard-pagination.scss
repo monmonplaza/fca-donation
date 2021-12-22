@@ -1,0 +1,40 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid $blue-1;
+    &__wrapper {
+        margin-top: 2rem;
+        margin-bottom: 2rem ;
+    }
+    .lds-ring div {
+        border-color: $blue transparent transparent transparent!important;
+    }
+
+    .load__text {
+        display: none;
+      
+        span {
+            font-style: italic;
+            padding-left: 1rem;
+            color: $blue;
+            animation: pulse 1.5s linear infinite;
+        } 
+    }
+    .load__text.show {
+        display: block;
+    }   
+}
+
+@keyframes pulse {
+    0% {opacity: 1}
+    50%{opacity: .2}
+    100%{opacity: 1}
+}
+
+.pagination.no--border {
+    border: none;
+}
+
+.pagination.children--list {
+    margin-bottom: 5rem;
+}

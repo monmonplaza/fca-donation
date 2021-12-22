@@ -1,0 +1,283 @@
+.dashboard__body {
+    margin-top: 2rem;
+    position: relative;
+    &__action {
+        position: absolute;
+        right: 0;
+        top: 1rem;
+        @include media-query($break-sm) {
+            top: -3.5rem;
+        }
+        button {
+            background-color: transparent;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            &:hover {
+                color: $blue;
+            }
+
+        }
+    }
+    &__flex {
+        display: flex;
+        flex-wrap: wrap;
+        // border-bottom: 1px solid $blue;
+        @include media-query($break-sm) {
+            // flex-direction: column;
+            border: none;
+        }
+    }
+        
+        input[type=radio] {
+            display: none;
+        }
+
+        label {
+            padding: 1rem 1.4rem;
+            border-top-left-radius: .5rem;
+            border-top-right-radius: .5rem;
+            position: relative;
+            border: 1px solid $blue-1 ; 
+            margin-right: .2rem;
+            background-color: $blue;
+            color: $light;
+            cursor: pointer;
+            border-bottom: none;
+            
+            @include media-query($break-sm) {
+                display: block;
+                // margin-bottom: -.6rem;
+                padding-bottom: 1rem;
+                box-shadow: 0px -3px 5px rgba(0,0,0,0.1);
+            }
+
+        }
+
+        label:first-child {
+            @include media-query($break-sm) {
+                box-shadow: none;
+            }
+            
+        }
+
+        .table__wrapper {
+            display: none;
+            width: 100%;
+            position: relative;
+            flex-grow: 1;
+            order: 99;
+            border-top: 1px solid $blue;
+          
+        }
+
+        input[type=radio]:checked + label {
+            background-color: $light;
+            color: $blue;
+            padding-bottom: 1px;
+            border-bottom: none;
+            position: relative;
+            @include media-query($break-sm) {
+                margin-bottom: .2rem;  
+                box-shadow: 0px -3px 5px rgba(0,0,0,0.1);
+                padding-bottom: 1rem;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -1px;
+                background-color: $light;
+                height: 1px;
+                width: 100%;
+                z-index: 999;
+            }
+        }
+
+        input[type=radio]:checked + label + .table__wrapper {
+            display: block!important;
+
+            
+        }
+
+        
+
+        .table__responsive{
+            // position: absolute;
+            // left: 0;
+            width: 100%;
+            overflow-x: auto;
+            
+            @include custom_scrollbar;
+            padding: 1rem 0;
+            & > p {
+                font-weight: bold;
+                padding: 0rem 0 2rem;
+                font-size: 1.6rem;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 3.5rem;
+                td, th {
+                    text-align: left;
+                }
+
+                th {
+                    background-color: $blue;
+                    color: $light;
+                    padding: .8rem 1.2rem ;
+                }
+
+                td:nth-child(1),
+                th:nth-child(1){
+                    width: .5rem;
+                }
+
+                td:nth-child(2),
+                th:nth-child(2){
+                    width: 5rem;
+                }
+                tr {
+                    border-bottom: 1px solid $light-1;
+                }
+                tr:nth-child(even) {
+                    background-color: $light-1;
+                }
+
+                td {
+                    font-weight: 300;
+                    font-size: 1.3rem;
+                }
+
+                td:nth-child(2) {
+                    width: 25rem;
+                    white-space: nowrap;
+                }
+
+                tbody tr:last-child {
+                    .table__option {
+                        &__list {
+                            top: -85%;
+                            right: 92%;
+                            left: unset;
+
+                        }
+                    }
+                }
+
+                tbody td {
+                    padding: .4rem 1.2rem ;
+                    white-space: nowrap;
+                }
+
+                
+
+                tbody tr {
+                    transition: .5s ease;
+                    &:hover {
+                        background-color: #c0c0c0;
+                    }
+                    .table__option {
+                        position: relative;
+                        &__icon {
+                            padding: .5rem;
+                            border: 1px solid transparent;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 3rem;
+                            height: 3rem;
+                            
+                            &:hover {
+                                border: 1px solid $light-2;
+                                border-radius: .2rem;
+                                cursor: pointer;
+                            }
+
+                            svg {
+                                font-size: 2rem;
+                            }
+                        }
+
+                        &__icon:hover .table__option__list {
+                            border: 1px solid $light-2;
+                            border-radius: .2rem;
+                            color: $blue;
+                            display: block;
+                        }
+                        &__list {
+                            position: absolute;
+                            min-width: 12rem;
+                            background-color:$light;
+                            border: 1px solid $light-1!important;
+                            top: 0%;
+                            right: calc(100% - 1.2rem);
+                            box-shadow: 2px 2px 8px rgba(0,0,0,0.01);
+                            display: none;
+                            z-index: 999999;
+                          
+                            ul {
+                               li {
+                                   
+                                   text-align: center;
+                                   button,a  {
+                                       color:$blue-dark;
+                                       font-size: 1.3rem;
+                                       background-color: transparent;
+                                       border: none;
+                                       cursor: pointer;
+                                       width: 100%;
+                                       padding: .6rem 1rem;
+                                       border:1px solid transparent;
+                                       &:hover {
+                                           background-color: $blue-light;
+                                           border:1px solid darken( $blue-light,5);
+                                       }
+                                   }
+
+                                   a {
+                                       display: block;
+                                     
+                                   }
+                               } 
+
+                               li:last-child{
+                                   margin-bottom:0 ;
+                               }
+                            }
+
+                        }
+                    }
+                    .table__status {
+                        span {
+                            padding: .3rem 1rem;
+                            color: $light;
+                            border-radius: .5rem;
+                            font-size: 1.4rem;
+                        }
+
+                        .status--active{
+                            background-color: $green;
+                        }
+                        .status--inactive{
+                            background-color: $gray-1;
+                        }
+
+                        .status--expired{
+                            background-color: $red;
+                        }
+
+                        .status--warning{
+                            background-color: $warning;
+                        }
+
+                    }
+                }
+            }
+        }
+
+
+
+  
+}

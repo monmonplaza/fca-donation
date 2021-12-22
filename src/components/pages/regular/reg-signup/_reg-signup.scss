@@ -1,0 +1,39 @@
+.signup__wrapper {
+    max-width: 75rem;
+    margin: 10rem auto;  
+    padding: 0 1.5rem;
+}
+
+.signup__block {
+    border: 1px solid $light-1;
+    margin-bottom: 3rem;
+    img {
+        display: block;
+        text-align: center;
+        margin: 3rem auto 0rem;
+    }
+    
+    &__header {
+        background-color: $blue;
+        padding: 1rem;
+        h3 {
+            color: $light;
+            font-size: 1.6rem;
+        }
+    }
+    &__body {
+        padding: 4rem 2rem;
+        .grid {
+            grid-gap: 3rem;
+            @include media-query($break-sm) {
+                grid-gap: 0;
+            }
+        }
+
+        button {
+            margin: 3rem auto 1rem;
+        }
+     
+    }
+}
+  

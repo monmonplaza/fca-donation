@@ -1,0 +1,123 @@
+.login {
+  display: grid;
+  grid-template-columns: 70% 1fr;
+  @include media-query($break-sm) {
+    grid-template-columns: 1fr;
+  }
+  &__quote {
+    min-height: 100vh;
+    background-color: $blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(rgba($blue, 0.95), rgba($blue, 0.9)),
+      url("../../../../css-images/login__banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include media-query($break-sm) {
+      display: none;
+    }
+    img {
+      position: absolute;
+      top: 3rem;
+      left: 3rem;
+      width: 33rem;
+    }
+    .quote__wrap {
+      max-width: 96rem;
+      color: $light;
+      margin: 1rem;
+      h2 {
+        font-size: 5rem;
+        line-height: 1.3;
+        font-weight: 400;
+        span {
+          font-size: 5.5rem;
+          font-weight: bold;
+        }
+      }
+
+      p {
+        font-size: 2rem;
+        position: relative;
+        text-align: right;
+        margin-top: 2rem;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 45%;
+          right: 16%;
+          width: 8rem;
+          height: 2px;
+          background-color: $light;
+        }
+      }
+    }
+  }
+}
+.login__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+  @include media-query($break-sm) {
+    height: 100vh;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+  .form__header {
+    margin-bottom: 3rem;
+    text-align: center;
+    img {
+      margin-bottom: 2rem;
+    }
+    h3 {
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: $blue;
+      font-weight: bold;
+    }
+  }
+
+  ul {
+    display: flex;
+    margin-top: -0.5rem;
+    margin-bottom: 3rem;
+    justify-content: space-between;
+    li {
+      a {
+        font-size: 1.4rem;
+        color: $blue;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  button {
+    margin: 0 auto;
+  }
+
+  .goto__home {
+    text-align: center;
+    color: $blue;
+    display: block;
+    margin-top: 2rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .login__footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #ccc;
+    font-size: 1.4rem;
+  }
+}

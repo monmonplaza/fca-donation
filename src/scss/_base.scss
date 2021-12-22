@@ -1,0 +1,77 @@
+@font-face {
+    font-family: "lato_bold";
+    src: url("../fonts/lato-bold-webfont.woff") format("woff2"),
+      url("../fonts/lato-bold-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "lato_regular";
+    src: url("../fonts/lato-regular-webfont.woff2") format("woff2"),
+      url("../fonts/lato-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "lato_black";
+    src: url("../fonts/lato-black-webfont.woff2") format("woff2"),
+      url("../fonts/lato-black-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "lato_light";
+    src: url("../fonts/lato-light-webfont.woff2") format("woff2"),
+      url("../fonts/lato-light-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  // * {
+  //   border: 1px solid red;
+  // }
+  
+  html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+    height: 100%;
+    // @include media_query($break-sm) {
+    //   font-size: 50%;
+    // }
+  }
+  
+  body {
+    font-size: 1.4rem;
+    color: $dark;
+    line-height: 1.2;
+    font-family: "lato_regular", sans-serif;
+    height: inherit;
+  }
+  
+  .container {
+    max-width: 114rem;
+    margin: 0 auto;
+  
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  
+#root {
+  height: 100%;
+}
+
+.d-flex {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}

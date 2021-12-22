@@ -1,0 +1,220 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.1);
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    &__main {
+        max-width: 45rem;
+        width: 100%;
+        background-color: $light;
+        max-height: 76rem;
+        margin: .5rem;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    &__main.modal--table {
+        max-width: 85rem;
+        .modal__body {
+            height: 35vh;
+        }
+    }
+
+    &__header {
+        padding: 2rem;
+        position: relative;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background-color: $blue;
+        color: $light;
+        .btn__modalClose {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background-color: transparent;
+            border: 0;
+            color: $light;
+            cursor: pointer;
+            svg {
+                fill: $light;
+                font-size: 2.5rem;
+            }
+        }
+    }
+    &__body {
+        // height: 38vh;
+        min-height: 23rem;
+        max-height: 38vh;
+        overflow-y: auto;
+        padding: 2rem;
+        @include custom_scrollbar;
+        margin: 1rem 0;
+        margin-right: 1.5rem;
+        line-height: 1.6;
+        @include media-query($break-sm) {
+            padding: 1rem;
+        }
+        input {
+            width: 100%;
+        }
+
+        h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+            padding: .5rem 0;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            border-bottom: 1px solid $light-1;
+            
+        }
+    }
+    &__body.form__long {
+        min-height: 60vh;
+    }
+
+
+    &__body.message__prompt {
+        min-height: 6rem;
+        svg {
+            font-size: 5rem;
+        }        
+    }
+
+    
+    &__body.message__prompt.modal--success {
+        svg {
+            color: $green;
+        }
+    }
+    &__body.message__prompt.modal--error {
+        svg {
+            color: $red-1;
+        }
+    }
+
+    &__body.message__prompt.modal--logout {
+        svg {
+            color: $blue;
+        }
+    }
+    &__body.message__login {
+        max-height: 5rem;
+        display: flex;
+        align-items: center;
+        overflow-y: hidden;
+    }
+
+    &__footer {
+        padding: 2rem;
+        border-top: 1px solid #f3f3f3;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        ul {
+            display: flex;
+            justify-content: flex-end;
+            li {
+                margin-left:1rem;
+                .btn {
+                    min-width: 8rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// THIS IS FOR THE VIEW CHILD PROFILE MODAL
+.child__info {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 16rem 1fr;
+        grid-gap: 1rem;
+    }
+
+    &__img {
+        img {
+            width: 100%;
+            height: 20rem;
+            object-fit: cover;
+        }
+    }
+    &__box {
+        ul {
+            margin-bottom: 1rem;
+            li:first-child {
+                font-weight: bold;
+            }
+        }
+    }
+
+    &__story {
+        margin: 2rem 0;
+        h3 {
+            margin-bottom: 1rem;
+        }
+    }
+
+    h3 {    
+        margin-bottom: 1rem;
+        border-bottom: 1px solid $gray-2;
+    }
+}
+
+
+// ADD NEW USER
+.modal__grid  {
+    display: grid;
+}
+.modal__grid.add--user  {
+    grid-template-columns: 1fr 10rem;
+    grid-gap: 1rem;
+    .form__group {
+        margin-bottom: 0;
+    }
+    button {
+        align-self: flex-end;
+       border: none;
+    }
+}
+
+
+// ADD DONOR 
+
+.modal__grid.add--donor  {
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+}
+
+
+// MODAL LOGIN
+.modal.modal--login {
+    display: none;
+    .img {
+        svg{
+            width: 25rem;
+        }
+    }
+
+    .modal__body {
+        margin-right: 0;
+    }
+
+    .modal__login__note {
+        margin-bottom: 2rem;
+        h2 {
+            text-align: center;
+        }
+    }
+}
+
+.modal.modal--login.show {
+    display: flex;
+}
