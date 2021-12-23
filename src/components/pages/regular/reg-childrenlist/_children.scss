@@ -1,235 +1,211 @@
 .childlist {
-    padding: 0 1.5rem;
-    &__tab {
-        display: flex; 
-        position: relative;
-        border-bottom: 1px solid $gray-1;
+  padding: 0 1.5rem;
+  &__tab {
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid $gray-1;
+    gap: 1rem;
+  }
+
+  &__body {
+    margin-bottom: 5rem;
+    position: relative;
+  }
+
+  &__block.active {
+    display: block;
+  }
+
+  &__block {
+    display: none;
+    .childlist__wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+      width: 100%;
+      grid-gap: 2rem;
+      margin-top: 5rem;
+      position: relative;
     }
-
-    &__nav {
-        border-bottom: 1px solid $light-2;
-        ul {
-            display: flex;
-            li {
-                margin-right: 1rem;
-                button {
-                    padding: 1.2rem 1.4rem;
-                    border: 1px solid $light-2;
-                    background-color: transparent;
-                    border-bottom: none;
-                    border-top-right-radius: .5rem;
-                    border-top-left-radius: .5rem;
-                    cursor: pointer;
-                    transition: .2s ease;
-                    &:hover {
-                        background-color: $blue;
-                        color: $light;
-                        border-color: $blue;
-                    }
-                }
-
-                button.active {
-                    background-color: $blue;
-                    color: $light;
-                    border-color: $blue;
-                }
-            }
-        }
-    }
-
-    &__body {
-        margin-bottom: 5rem;
-       position: relative;
-    }
-
-    &__block.active {
-        display: block
-    }
-
-    &__block {
-        display: none;
-        .childlist__wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
-            width: 100%;
-            grid-gap: 2rem;
-            margin-top: 5rem;
-            position: relative;
-
-            
-        }
-    }
+  }
 }
 
 .back__to__childlist {
-    margin-bottom: 5rem;
-    a {
-        display: flex;
-        align-items: center;
-        font-size: 1.6rem;
-        color: $dark;
+  margin-bottom: 5rem;
+  a {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    color: $dark;
 
-        &:hover {
-            color: $orange;
-        }
-        svg {
-            margin-right: .5rem;
-        }
+    &:hover {
+      color: $orange;
     }
+    svg {
+      margin-right: 0.5rem;
+    }
+  }
 }
 
+.childbanner {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 
- // CARD START HERE
- .child {
+  &__content {
+    background-color: #eee;
+    display: grid;
+    place-items: flex-end flex-end;
+    div {
+      max-width: 43rem;
+      margin-right: 5rem;
+      margin-bottom: 8rem;
+      h2 {
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        line-height: 1.4;
+        margin-bottom: 2rem;
+      }
+
+      button {
+        border-radius: 3rem;
+      }
+    }
+  }
+
+  &__img {
+    img {
+      height: 45rem;
+      width: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+  }
+}
+
+// CARD START HERE
+.child {
+  width: 100%;
+  margin-bottom: 1rem;
+  @include media-query($break-sm) {
+    width: 75%;
+    margin: 0 auto;
+  }
+  &__img {
+    position: relative;
+    img {
+      width: 100%;
+      display: block;
+      height: 25rem;
+      object-fit: cover;
+      object-position: top center;
+      @include media-query($break-sm) {
+        height: 35rem;
+      }
+    }
+  }
+  &__content {
     width: 100%;
-    @include media-query($break-sm) {
-        width: 75%;
-        margin: 0 auto;
-    }
-    &__img {
-        position: relative;
-        img {
-            width: 100%;
-            display: block;
-            object-fit: cover;
-            object-position: top center;
-            @include media-query($break-sm) {
-                height: 35rem;
-            }
-        }
-    }
-    &__content {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 1rem;
-        background-color: rgba(0,0,0,0.6);
-        color: $light;
-        &__wrap {
-            h3 {
-                border-bottom: none;
-                margin-bottom: .5rem;
-            }
-            a {
-                color: $orange;
-                &:hover {
-                    color: $orange-1;
-                }
-            }
-        }
-
-        a {
-            margin: 0;
-        }
+    padding: 1rem;
+    h3 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: $blue;
     }
 
-    &__bar {
-        padding: 2rem 1rem;
-        background-color: #ffba5f;
-        position: relative;
-        
-        &__progress {
-            position: absolute;
-            width: 30%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background-color: #e98400;
-        }
-
-        &__label {
-            position: absolute;
-            top: 1.3rem;
-            color: $light;
-            
-        }
+    p {
+      margin-bottom: 2rem;
+      line-height: 1.4;
     }
+
+    button {
+      width: 100%;
+      border-radius: 2rem;
+    }
+  }
 }
 
 .children_nodata {
-    width: 100%;
-    height: 30vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &__wrapper {
-        text-align: center;
-        svg {
-            font-size: 10rem;
-        }
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__wrapper {
+    text-align: center;
+    svg {
+      font-size: 10rem;
     }
+  }
 }
-
-
 
 // SINGLE PAGE OF THE CHILD
 
 .child__single {
-    padding: 0 0 10rem ;
-    &__wrapper {
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 5rem;
-        max-width: 75%;
+  padding: 0 0 10rem;
+  &__wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5rem;
+    max-width: 75%;
+    margin: 0 auto;
+    @include media-query($break-md) {
+      grid-template-columns: 1fr;
+    }
+    @include media-query($break-sm) {
+      max-width: 95%;
+    }
+  }
+
+  &__img {
+    img {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      @include media-query($break-md) {
+        width: 40%;
         margin: 0 auto;
-        @include media-query($break-md) {
-            grid-template-columns: 1fr ;
-        }
-        @include media-query($break-sm) {
-            max-width: 95%;
-        }
+      }
+
+      @include media-query($break-sm) {
+        width: 100%;
+      }
+    }
+  }
+  &__profile {
+    .childname {
+      font-size: 2.5rem;
+      padding: 1rem 0;
+      color: $orange;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid $light-2;
     }
 
-    &__img {
-        img {
-            width: 100%;
-            object-fit: cover;
-            display: block;
-            @include media-query($break-md) {
-                width: 40%;
-                margin: 0 auto;
-            }
-
-            @include media-query($break-sm) {
-                width: 100%;
-            }
+    .childinfo {
+      margin-bottom: 1rem;
+      li {
+        margin-bottom: 1rem;
+        font-weight: bold;
+        font-size: 1.6rem;
+        span {
+          font-weight: 400;
         }
-    }
-    &__profile {
-        .childname {
-            font-size: 2.5rem;
-            padding: 1rem 0;
-            color: $orange;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid $light-2;
-        }
-
-        .childinfo{
-            margin-bottom: 1rem;
-            li {
-                margin-bottom:  1rem;
-                font-weight: bold;
-                font-size: 1.6rem;
-                span{
-                    font-weight: 400;
-                }
-            }
-        }
-
-        .childstory {
-            margin-bottom: 2rem;
-            h3 {
-                margin-bottom: 1rem;
-                
-            }
-
-            p {
-                line-height: 1.6;
-                text-align: justify;
-            }
-        }
+      }
     }
 
+    .childstory {
+      margin-bottom: 2rem;
+      h3 {
+        margin-bottom: 1rem;
+      }
+
+      p {
+        line-height: 1.6;
+        text-align: justify;
+      }
+    }
+  }
 }
